@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <title>REELHAUS | Premium Content Marketing für Umsatzwachstum</title>
+  <meta name="description" content="REELHAUS - Premium Content Marketing für Gastronomie, Fashion & Luxus. Content, der verkauft. ROI statt Reichweite." />
+  <meta name="keywords" content="Content Marketing, Premium, Gastronomie, Fashion, Luxus, Reels, Video Production, Performance Marketing, ROI, Social Media" />
+  <meta name="author" content="REELHAUS" />
+  <meta name="theme-color" content="#E03A1E" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="REELHAUS | Premium Content Marketing für Umsatzwachstum" />
+  <meta property="og:description" content="Content, der verkauft. Premium Content Marketing für Gastronomie, Fashion & Luxus. ROI statt Reichweite." />
+  <meta property="og:locale" content="de_DE" />
+  <meta property="og:site_name" content="REELHAUS" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@300;400;500;600;700;800;900&family=Unbounded:wght@400;500;700;900&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind (Play CDN) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            "brand-dark": "#050505",
+            "brand-red": "#E03A1E",
+            "brand-red-deep": "#c4310f",
+            "brand-gold": "#C9A84C",
+            "brand-cream": "#F2EDE4",
+            "brand-gray": "#131313",
+          },
+          fontFamily: {
+            display: ['"Unbounded"', "sans-serif"],
+            sans: ['"Inter"', "sans-serif"],
+            mono: ['"DM Mono"', "ui-monospace", "monospace"],
+          },
+        },
+      },
+    };
+  </script>
+
+  <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body class="bg-brand-dark text-white antialiased">
+  <!-- Animated background -->
+  <div class="fog" aria-hidden="true"></div>
+
+  <!-- ============================== NAV ============================== -->
+  <header id="nav" class="fixed top-0 inset-x-0 z-50 py-4 bg-brand-dark/80 backdrop-blur-md border-b border-white/5 transition-all">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="#hero" class="logo-row group" aria-label="REELHAUS">
+        <span class="logo-reel text-2xl">REEL</span><span class="logo-haus text-2xl">HAUS</span>
+      </a>
+
+      <!-- Desktop nav -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium uppercase tracking-wider">
+        <a href="#hero" class="nav-link hover:text-brand-red transition-colors">Home</a>
+        <a href="#agentur" class="nav-link hover:text-brand-red transition-colors">Agentur</a>
+        <a href="#leistungen" class="nav-link hover:text-brand-red transition-colors">Leistungen</a>
+        <a href="#arbeiten" class="nav-link hover:text-brand-red transition-colors">Arbeiten</a>
+        <a href="#core-branding" class="nav-link hover:text-brand-red transition-colors">Methode</a>
+        <a href="#kontakt" class="nav-link hover:text-brand-red transition-colors">Kontakt</a>
+      </nav>
+
+      <!-- CTA + burger -->
+      <div class="flex items-center gap-4">
+        <a href="#kontakt" class="hidden sm:inline-flex btn-red font-bold text-sm uppercase tracking-wide px-5 py-2.5 rounded-[3px]">
+          Projekt Starten
+        </a>
+        <button id="burger" class="md:hidden w-10 h-10 flex flex-col items-center justify-center gap-1.5" aria-label="Menü öffnen">
+          <span class="block w-6 h-0.5 bg-white transition-all"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all"></span>
+          <span class="block w-6 h-0.5 bg-white transition-all"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile menu -->
+    <div id="mobileMenu" class="mobile-menu md:hidden absolute top-full inset-x-0 bg-brand-dark border-b border-white/10 px-6 py-6">
+      <nav class="flex flex-col gap-5 text-lg font-medium uppercase tracking-wider">
+        <a href="#hero" class="hover:text-brand-red">Home</a>
+        <a href="#agentur" class="hover:text-brand-red">Agentur</a>
+        <a href="#leistungen" class="hover:text-brand-red">Leistungen</a>
+        <a href="#arbeiten" class="hover:text-brand-red">Arbeiten</a>
+        <a href="#core-branding" class="hover:text-brand-red">Methode</a>
+        <a href="#kontakt" class="hover:text-brand-red">Kontakt</a>
+        <a href="#kontakt" class="btn-red text-center font-bold px-5 py-3 rounded-[3px] mt-2">Projekt Starten</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============================== HERO ============================== -->
+  <section id="hero" class="relative min-h-screen flex flex-col justify-center px-6 pt-32 pb-20 overflow-hidden">
+    <div class="hero-glow top-10 -left-20"></div>
+    <div class="hero-glow bottom-0 right-0"></div>
+
+    <div class="max-w-7xl mx-auto w-full relative z-10">
+      <p class="reveal font-mono text-brand-gold uppercase tracking-[0.3em] text-sm md:text-base mb-6">
+        Premium Content Marketing
+      </p>
+
+      <h1 class="font-display font-bold leading-[0.85] tracking-tight text-[16vw] md:text-[11vw] lg:text-[10rem]">
+        <span class="reveal block">Content, der</span>
+        <span class="reveal block text-outline-red" data-delay="1">verkauft.</span>
+      </h1>
+
+      <div class="reveal mt-10 max-w-2xl" data-delay="2">
+        <p class="text-lg md:text-2xl text-brand-cream/70 leading-relaxed">
+          Reichweite ist nett. Umsatz ist besser. Wir produzieren Content, der nicht nur gefällt,
+          sondern verkauft. Das ist <span class="text-brand-red font-semibold">REELHAUS</span>.
+        </p>
+      </div>
+
+      <div class="reveal mt-12 flex flex-col sm:flex-row gap-4" data-delay="3">
+        <a href="#kontakt" class="btn-red inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wide px-8 py-4 rounded-[3px] text-base">
+          Projekt Starten
+          <span aria-hidden="true">→</span>
+        </a>
+        <a href="#leistungen" class="inline-flex items-center justify-center gap-2 font-bold uppercase tracking-wide px-8 py-4 rounded-[3px] text-base border border-white/20 hover:border-brand-red hover:text-brand-red transition-colors">
+          Unsere Leistungen
+        </a>
+      </div>
+    </div>
+
+    <!-- scroll cue -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
+      <span class="text-xs uppercase tracking-widest">Scroll</span>
+      <span class="w-px h-10 bg-gradient-to-b from-white/40 to-transparent"></span>
+    </div>
+  </section>
+
+  <!-- ============================== MARQUEE ============================== -->
+  <div class="bg-brand-dark text-white border-y border-white/10 py-5 overflow-hidden">
+    <div class="marquee marquee--left font-display text-3xl md:text-5xl font-bold uppercase">
+      <span class="px-4 text-outline">CONTENT, DER VERKAUFT •</span>
+      <span class="px-4">PREMIUM •</span>
+      <span class="px-4 text-outline">ROI STATT REICHWEITE •</span>
+      <span class="px-4 text-brand-red">REELHAUS •</span>
+      <span class="px-4 text-outline">CONTENT, DER VERKAUFT •</span>
+      <span class="px-4">PREMIUM •</span>
+      <span class="px-4 text-outline">ROI STATT REICHWEITE •</span>
+      <span class="px-4 text-brand-red">REELHAUS •</span>
+    </div>
+  </div>
+
+  <!-- ============================== AGENTUR / ABOUT ============================== -->
+  <section id="agentur" class="py-28 md:py-40 px-6 bg-brand-cream text-brand-dark selection:bg-brand-red selection:text-brand-cream relative">
+    <div class="max-w-6xl mx-auto">
+      <p class="reveal font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-8">Die Agentur</p>
+      <h2 class="reveal font-display text-3xl md:text-6xl font-bold leading-[1.05] max-w-5xl" data-delay="1">
+        In einer Welt voller Rauschen gehen leise Stimmen unter.
+        <span class="text-brand-red">Deshalb drehen wir den Regler auf Anschlag.</span>
+      </h2>
+
+      <div class="mt-20 grid md:grid-cols-3 gap-8">
+        <div class="reveal" data-delay="1">
+          <p class="font-display text-5xl md:text-6xl font-bold text-brand-red">100%</p>
+          <p class="mt-3 text-black/60 font-medium">In-House Produktion. Strategie, Dreh und Editing aus einer Hand.</p>
+        </div>
+        <div class="reveal" data-delay="2">
+          <p class="font-display text-5xl md:text-6xl font-bold text-brand-red">Gen Z</p>
+          <p class="mt-3 text-black/60 font-medium">Wir verstehen die Codes, TikTok-Algorithmen und die Sprache deiner Kunden.</p>
+        </div>
+        <div class="reveal" data-delay="3">
+          <p class="font-display text-5xl md:text-6xl font-bold text-brand-red">0815?</p>
+          <p class="mt-3 text-black/60 font-medium">Keine Agentur für Standardlösungen, sondern dein Partner für digitale Dominanz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== LEISTUNGEN / SERVICES ============================== -->
+  <section id="leistungen" class="py-28 md:py-40 px-6 bg-brand-dark relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-16">
+        <div>
+          <p class="reveal font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-4">Leistungen</p>
+          <h2 class="reveal font-display text-4xl md:text-7xl font-bold" data-delay="1">
+            Das <span class="text-outline-red">liefern</span> wir.
+          </h2>
+        </div>
+        <p class="reveal max-w-md text-white/60" data-delay="2">
+          Full-Service für deine Brand – von der Strategie über High-End-Video bis zur Performance-Kampagne.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-px bg-white/10 border border-white/10 rounded-sm overflow-hidden">
+        <!-- Card 1 -->
+        <article class="service-card reveal bg-brand-dark hover:bg-white/[0.03] p-8 md:p-12 group">
+          <div class="flex items-start justify-between mb-8">
+            <span class="font-mono text-brand-red text-sm">01</span>
+            <span class="arrow text-2xl text-white/40 -rotate-45">→</span>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold mb-3">Social Management</h3>
+          <p class="text-brand-red text-sm font-mono uppercase tracking-wider mb-5">Community &amp; Growth</p>
+          <p class="text-white/60 leading-relaxed">
+            Strategien, die deine Brand zur Love-Brand machen. Full-Service Betreuung, Community Management
+            und Posting-Pläne, die performen.
+          </p>
+        </article>
+
+        <!-- Card 2 -->
+        <article class="service-card reveal bg-brand-dark hover:bg-white/[0.03] p-8 md:p-12 group" data-delay="1">
+          <div class="flex items-start justify-between mb-8">
+            <span class="font-mono text-brand-red text-sm">02</span>
+            <span class="arrow text-2xl text-white/40 -rotate-45">→</span>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold mb-3">Video Production</h3>
+          <p class="text-brand-red text-sm font-mono uppercase tracking-wider mb-5">Reels &amp; TikToks</p>
+          <p class="text-white/60 leading-relaxed">
+            High-End Short-Form Content. Wir produzieren Reels &amp; TikToks, die viral gehen.
+            In-House Studio, Regie &amp; Editing aus einer Hand.
+          </p>
+        </article>
+
+        <!-- Card 3 -->
+        <article class="service-card reveal bg-brand-dark hover:bg-white/[0.03] p-8 md:p-12 group" data-delay="2">
+          <div class="flex items-start justify-between mb-8">
+            <span class="font-mono text-brand-red text-sm">03</span>
+            <span class="arrow text-2xl text-white/40 -rotate-45">→</span>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold mb-3">Performance Ads</h3>
+          <p class="text-brand-red text-sm font-mono uppercase tracking-wider mb-5">Paid Social</p>
+          <p class="text-white/60 leading-relaxed">
+            Videos, die verkaufen. UGC &amp; Creative Ads für Meta &amp; TikTok, die deine Zielgruppe
+            direkt ins Herz (und den Warenkorb) treffen.
+          </p>
+        </article>
+
+        <!-- Card 4 -->
+        <article class="service-card reveal bg-brand-dark hover:bg-white/[0.03] p-8 md:p-12 group" data-delay="3">
+          <div class="flex items-start justify-between mb-8">
+            <span class="font-mono text-brand-red text-sm">04</span>
+            <span class="arrow text-2xl text-white/40 -rotate-45">→</span>
+          </div>
+          <h3 class="font-display text-2xl md:text-3xl font-bold mb-3">Next Gen Recruiting</h3>
+          <p class="text-brand-red text-sm font-mono uppercase tracking-wider mb-5">Employer Branding</p>
+          <p class="text-white/60 leading-relaxed">
+            Der Fachkräftemangel nervt? Wir zeigen dich als Arbeitgeber so, dass die Bewerber bei dir
+            Schlange stehen – authentisch per Video.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== ARBEITEN / WORKGRID (pinned phone + native snap-scroll feed) ============================== -->
+  <section id="arbeiten" class="bg-brand-cream text-brand-dark relative pb-24 md:pb-28">
+    <!-- Intro -->
+    <div class="max-w-7xl mx-auto px-6 pt-24 md:pt-32 pb-10">
+      <div class="max-w-3xl">
+        <p class="reveal font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-4">Arbeiten</p>
+        <h2 class="reveal font-display text-4xl md:text-7xl font-bold leading-[0.95]" data-delay="1">
+          Wir machen <span class="text-outline-black">süchtig</span>
+        </h2>
+        <p class="reveal mt-6 text-black/60 text-lg" data-delay="2">
+          Statische Bilder waren gestern. Wir produzieren Vertical Video Content, der den Algorithmus
+          füttert und deine Community bindet. Scroll dich durch unsere neuesten Hits.
+        </p>
+      </div>
+    </div>
+
+    <!-- Pinned scroll track -->
+    <div id="workTrack" class="relative">
+      <div class="work-pin flex items-center">
+        <div class="max-w-7xl mx-auto w-full px-6 grid lg:grid-cols-2 items-center gap-12">
+          <!-- Left column (desktop) -->
+          <div class="hidden lg:block">
+            <p class="font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-4">Vertical Video Content</p>
+            <h3 class="font-display text-4xl xl:text-6xl font-bold leading-[1.0]">
+              Scroll dich durch<br />unsere <span class="text-brand-red">neuesten Hits.</span>
+            </h3>
+            <p class="mt-6 text-black/60 max-w-md text-lg">
+              High-End Short-Form Content, der viral geht. In-House Studio, Regie &amp; Editing aus einer Hand.
+            </p>
+            <p class="mt-4 inline-flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-black/40">
+              <span class="text-brand-red">↕</span> Im Phone scrollen &amp; durch die Reels swipen
+            </p>
+            <div class="mt-6 inline-flex items-center gap-2 font-bold text-black/80">
+              <span class="text-brand-red">POV:</span> Dein Business geht viral 🚀
+            </div>
+            <!-- progress -->
+            <div class="mt-8 flex items-center gap-3">
+              <span class="font-mono text-xs text-black/40" id="workCount">01 / 06</span>
+              <div class="h-1 w-48 bg-black/10 rounded-full overflow-hidden">
+                <div id="workProgress" class="h-full w-0 bg-brand-red rounded-full"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Phone mockup (iPhone-style: titanium frame, Dynamic Island, side buttons) -->
+          <div class="flex justify-center lg:justify-end">
+            <div class="relative w-[300px] sm:w-[340px] h-[620px] sm:h-[700px]">
+              <!-- side buttons -->
+              <span class="absolute -left-[3px] top-[112px] w-[3px] h-[26px] rounded-l bg-[#26272c]"></span>
+              <span class="absolute -left-[3px] top-[160px] w-[3px] h-[52px] rounded-l bg-[#26272c]"></span>
+              <span class="absolute -left-[3px] top-[224px] w-[3px] h-[52px] rounded-l bg-[#26272c]"></span>
+              <span class="absolute -right-[3px] top-[196px] w-[3px] h-[78px] rounded-r bg-[#26272c]"></span>
+
+              <!-- titanium frame -->
+              <div class="relative w-full h-full rounded-[3.3rem] bg-gradient-to-b from-[#34353b] via-[#1b1b1f] to-[#2a2b30] p-[3px] shadow-[0_35px_70px_-18px_rgba(0,0,0,0.75)]">
+                <!-- inner black bezel -->
+                <div class="relative w-full h-full rounded-[3.1rem] bg-black p-[10px]">
+                  <!-- screen -->
+                  <div class="relative w-full h-full rounded-[2.5rem] overflow-hidden bg-black ring-1 ring-white/5">
+                    <!-- native vertical snap-scroller (reels injected by main.js) -->
+                    <div id="phoneScreen" class="absolute inset-0 bg-black"></div>
+
+                    <!-- Dynamic Island -->
+                    <div class="absolute top-[12px] left-1/2 -translate-x-1/2 w-[94px] h-[28px] bg-black rounded-full z-30 flex items-center justify-end pr-2.5 pointer-events-none">
+                      <span class="w-[9px] h-[9px] rounded-full bg-[#04060a] ring-1 ring-[#12141d]"></span>
+                    </div>
+
+                    <!-- mute / unmute toggle (controls the playing reel; default muted) -->
+                    <button id="reelMute" type="button" class="absolute top-7 right-3 z-40 w-9 h-9 rounded-full bg-black/45 backdrop-blur border border-white/25 text-white flex items-center justify-center active:scale-95 transition-transform" aria-label="Ton einschalten" aria-pressed="false"></button>
+
+                    <!-- home indicator -->
+                    <div class="absolute bottom-2 left-1/2 -translate-x-1/2 w-[36%] h-[5px] bg-white/60 rounded-full z-30 pointer-events-none"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== WORKFLOW / BLUEPRINT ============================== -->
+  <section id="workflow" class="py-28 md:py-40 px-6 bg-brand-dark relative overflow-hidden">
+    <!-- ambient glows -->
+    <div class="absolute bottom-0 left-0 w-[50%] h-[50%] bg-brand-red/5 rounded-full blur-[150px] pointer-events-none"></div>
+    <div class="absolute top-0 right-0 w-[50%] h-[50%] bg-brand-red/10 rounded-full blur-[150px] pointer-events-none"></div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
+      <div class="mb-20 text-center md:text-left">
+        <p class="reveal font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-4">Workflow / Blueprint</p>
+        <h2 class="reveal font-display text-4xl md:text-7xl font-bold" data-delay="1">
+          Kein Zufall. Ein <span class="text-brand-red">System.</span>
+        </h2>
+        <p class="reveal mt-4 text-white/60 text-lg max-w-xl md:mx-0 mx-auto" data-delay="2">
+          So bringen wir dich von 0 auf 100.
+        </p>
+      </div>
+
+      <!-- Vertical progress timeline -->
+      <div id="blueprintTimeline" class="relative max-w-4xl mx-auto">
+        <!-- static track line -->
+        <span class="absolute left-4 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 -translate-x-1/2 rounded-full" aria-hidden="true"></span>
+        <!-- animated blue progress fill (height set by JS on scroll) -->
+        <span id="blueprintFill" class="absolute left-4 md:left-1/2 top-0 w-[2px] h-0 bg-brand-red shadow-[0_0_20px_#E03A1E] -translate-x-1/2 rounded-full origin-top z-[1]" aria-hidden="true"></span>
+
+        <!-- Step 1 — card left -->
+        <div class="bp-step relative md:grid md:grid-cols-2 md:gap-16 pb-12 md:pb-0 md:py-8 pl-14 md:pl-0">
+          <span class="bp-dot absolute left-4 md:left-1/2 top-1 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2">
+            <span class="bp-ping"></span><span class="bp-core"></span>
+          </span>
+          <div class="bp-card reveal group md:col-start-1 md:text-right bg-brand-gray border border-white/10 rounded-sm p-7 md:p-8 transition-colors duration-500">
+            <div class="flex items-center gap-4 mb-4 md:flex-row-reverse">
+              <span class="p-3 bg-white/5 rounded-full text-2xl leading-none">🎯</span>
+              <span class="bp-num font-display text-4xl md:text-5xl font-bold text-outline">01</span>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Kickoff &amp; Strategy</h3>
+            <span class="block h-[2px] w-12 bg-brand-red shadow-[0_0_10px_rgba(224,58,30,0.8)] mb-4 md:ml-auto"></span>
+            <p class="text-white/60 leading-relaxed text-sm">
+              Wir setzen uns zusammen, checken den Status Quo und bauen den Schlachtplan. Zielgruppe,
+              Tone of Voice, Kanäle – wir definieren die DNA deiner Marke.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 — card right -->
+        <div class="bp-step relative md:grid md:grid-cols-2 md:gap-16 pb-12 md:pb-0 md:py-8 pl-14 md:pl-0">
+          <span class="bp-dot absolute left-4 md:left-1/2 top-1 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2">
+            <span class="bp-ping"></span><span class="bp-core"></span>
+          </span>
+          <div class="bp-card reveal group md:col-start-2 bg-brand-gray border border-white/10 rounded-sm p-7 md:p-8 transition-colors duration-500">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="p-3 bg-white/5 rounded-full text-2xl leading-none">🎬</span>
+              <span class="bp-num font-display text-4xl md:text-5xl font-bold text-outline">02</span>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Content Production</h3>
+            <span class="block h-[2px] w-12 bg-brand-red shadow-[0_0_10px_rgba(224,58,30,0.8)] mb-4"></span>
+            <p class="text-white/60 leading-relaxed text-sm">
+              Kameras an. Wir kommen vorbei (oder du zu uns) und shooten Content am Fließband. Skripte,
+              Regie, Editing – wir liefern High-End Qualität, keine wackeligen Handy-Videos.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 — card left -->
+        <div class="bp-step relative md:grid md:grid-cols-2 md:gap-16 pb-12 md:pb-0 md:py-8 pl-14 md:pl-0">
+          <span class="bp-dot absolute left-4 md:left-1/2 top-1 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2">
+            <span class="bp-ping"></span><span class="bp-core"></span>
+          </span>
+          <div class="bp-card reveal group md:col-start-1 md:text-right bg-brand-gray border border-white/10 rounded-sm p-7 md:p-8 transition-colors duration-500">
+            <div class="flex items-center gap-4 mb-4 md:flex-row-reverse">
+              <span class="p-3 bg-white/5 rounded-full text-2xl leading-none">🚀</span>
+              <span class="bp-num font-display text-4xl md:text-5xl font-bold text-outline">03</span>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Go Live &amp; Attack</h3>
+            <span class="block h-[2px] w-12 bg-brand-red shadow-[0_0_10px_rgba(224,58,30,0.8)] mb-4 md:ml-auto"></span>
+            <p class="text-white/60 leading-relaxed text-sm">
+              Der Content geht online. Wir übernehmen das Posting, das Community Management und sorgen
+              dafür, dass der Algorithmus uns liebt. Wir bringen dich ins Gespräch.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 4 — card right -->
+        <div class="bp-step relative md:grid md:grid-cols-2 md:gap-16 pb-12 md:pb-0 md:py-8 pl-14 md:pl-0">
+          <span class="bp-dot absolute left-4 md:left-1/2 top-1 md:top-1/2 -translate-x-1/2 md:-translate-y-1/2">
+            <span class="bp-ping"></span><span class="bp-core"></span>
+          </span>
+          <div class="bp-card reveal group md:col-start-2 bg-brand-gray border border-white/10 rounded-sm p-7 md:p-8 transition-colors duration-500">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="p-3 bg-white/5 rounded-full text-2xl leading-none">📈</span>
+              <span class="bp-num font-display text-4xl md:text-5xl font-bold text-outline">04</span>
+            </div>
+            <h3 class="font-display text-xl md:text-2xl font-bold mb-3">Analyze &amp; Scale</h3>
+            <span class="block h-[2px] w-12 bg-brand-red shadow-[0_0_10px_rgba(224,58,30,0.8)] mb-4"></span>
+            <p class="text-white/60 leading-relaxed text-sm">
+              Daten lügen nicht. Wir tracken jede View, jeden Like. Was funktioniert, wird skaliert.
+              Was nicht funktioniert, fliegt raus. Dauerhafte Optimierung für maximales Wachstum.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== CORE BRANDING ============================== -->
+  <section id="core-branding" class="py-28 md:py-40 px-6 bg-brand-dark border-y border-white/10 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-16 items-center relative z-10">
+      <div>
+        <p class="reveal font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-4">Die Lösung</p>
+        <h2 class="reveal font-display text-4xl md:text-6xl font-bold leading-[1.05]" data-delay="1">
+          Die <span class="text-brand-red">REELHAUS</span> Methode
+        </h2>
+        <p class="reveal mt-6 text-white/60 text-lg" data-delay="2">
+          Keine halben Sachen mehr. Alles in einer Strategie – Marketing &amp; HR ganzheitlich gedacht,
+          resistent gegen Plattform-Änderungen.
+        </p>
+        <a href="#kontakt" class="reveal inline-flex items-center gap-2 mt-8 font-bold uppercase tracking-wide px-7 py-3.5 rounded-[3px] bg-transparent text-white border border-white/30 hover:bg-white/5 hover:border-brand-red hover:text-brand-red transition-colors" data-delay="3">
+          Mehr erfahren →
+        </a>
+      </div>
+
+      <ul class="grid sm:grid-cols-2 gap-4">
+        <li class="reveal flex items-start gap-3 bg-white/[0.03] border border-white/10 rounded-sm p-5">
+          <span class="text-brand-red text-xl">✓</span>
+          <span class="font-medium">Storytelling statt Werbung</span>
+        </li>
+        <li class="reveal flex items-start gap-3 bg-white/[0.03] border border-white/10 rounded-sm p-5" data-delay="1">
+          <span class="text-brand-red text-xl">✓</span>
+          <span class="font-medium">Ganzheitliche Betreuung (Marketing &amp; HR)</span>
+        </li>
+        <li class="reveal flex items-start gap-3 bg-white/[0.03] border border-white/10 rounded-sm p-5" data-delay="2">
+          <span class="text-brand-red text-xl">✓</span>
+          <span class="font-medium">Employer Wirkung: Attraktivität für Bewerber</span>
+        </li>
+        <li class="reveal flex items-start gap-3 bg-white/[0.03] border border-white/10 rounded-sm p-5" data-delay="2">
+          <span class="text-brand-red text-xl">✓</span>
+          <span class="font-medium">Langfristige Markenbindung</span>
+        </li>
+        <li class="reveal flex items-start gap-3 bg-brand-red/10 border border-brand-red/40 rounded-sm p-5" data-delay="3">
+          <span class="text-brand-red text-xl">★</span>
+          <span class="font-medium">Alles in einer Strategie</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================== MARQUEE 2 ============================== -->
+  <div class="bg-brand-dark text-white border-b border-white/10 py-5 overflow-hidden">
+    <div class="marquee marquee--right font-display text-3xl md:text-5xl font-bold uppercase">
+      <span class="px-4">GASTRONOMIE •</span>
+      <span class="px-4 text-outline">FASHION •</span>
+      <span class="px-4 text-brand-red">LUXUS •</span>
+      <span class="px-4 text-outline">PERFORMANCE •</span>
+      <span class="px-4">GASTRONOMIE •</span>
+      <span class="px-4 text-outline">FASHION •</span>
+      <span class="px-4 text-brand-red">LUXUS •</span>
+      <span class="px-4 text-outline">PERFORMANCE •</span>
+    </div>
+  </div>
+
+  <!-- ============================== KONTAKT / CTA ============================== -->
+  <section id="kontakt" class="py-28 md:py-40 px-6 bg-brand-cream text-brand-dark relative overflow-hidden">
+    <div class="max-w-7xl mx-auto relative z-10">
+      <!-- CTA Heading -->
+      <div class="max-w-4xl mb-20">
+        <p class="reveal font-mono uppercase tracking-[0.3em] text-sm text-brand-gold mb-6">Kontakt</p>
+        <h2 class="reveal font-display text-5xl md:text-8xl font-bold leading-[0.9]" data-delay="1">
+          Bereit für<br />
+          <span class="text-brand-red">mehr Umsatz?</span>
+        </h2>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-16">
+        <!-- Left: trust + info -->
+        <div class="space-y-10">
+          <div class="reveal flex gap-4 items-start">
+            <span class="font-mono text-sm text-brand-red whitespace-nowrap pt-1">01 — EXPERTISE</span>
+            <p class="text-black/70">
+              Wir leben Content Marketing. Trends, Formate und Algorithmen sind unser Tagesgeschäft –
+              nicht dein Problem.
+            </p>
+          </div>
+          <div class="reveal flex gap-4 items-start" data-delay="1">
+            <span class="font-mono text-sm text-brand-red whitespace-nowrap pt-1">02 — TRANSPARENCY</span>
+            <p class="text-black/70">
+              Klare Reportings, ehrliche Zahlen. Du siehst genau, was deine Investition bringt.
+            </p>
+          </div>
+          <div class="reveal flex gap-4 items-start" data-delay="2">
+            <span class="font-mono text-sm text-brand-red whitespace-nowrap pt-1">03 — RESULTS</span>
+            <p class="text-black/70">
+              ROI statt Reichweite. Wir liefern messbaren Umsatz, keine leeren Vanity-Metriken.
+            </p>
+          </div>
+
+          <div class="reveal border-t border-black/10 pt-8" data-delay="2">
+            <p class="font-display text-2xl font-bold mb-1">Antwort in 24 Stunden</p>
+            <p class="text-black/60">Kein Verkaufsdruck, kein Blabla – nur ein <span class="font-bold">ehrliches Erstgespräch</span> über deine Ziele.</p>
+          </div>
+
+          <div class="reveal space-y-3" data-delay="3">
+            <a href="mailto:kontakt@reel-haus.de" class="flex items-center gap-3 text-lg font-medium hover:text-brand-red transition-colors">
+              <span class="w-10 h-10 rounded-full bg-brand-red text-brand-cream flex items-center justify-center">✉</span>
+              kontakt@reel-haus.de
+            </a>
+            <p class="flex items-center gap-3 text-lg font-medium">
+              <span class="w-10 h-10 rounded-full bg-brand-red text-brand-cream flex items-center justify-center">📍</span>
+              Deutschland · München
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: form -->
+        <form id="contactForm" class="reveal bg-[#fafafa] border border-black/10 rounded-sm p-8 md:p-10 space-y-8" data-delay="1">
+          <div>
+            <label class="block font-bold uppercase tracking-wide text-sm mb-3">Worum geht's?</label>
+            <div class="flex flex-wrap gap-2" data-group="service" data-single="true">
+              <span class="chip border border-gray-200 hover:border-brand-red hover:bg-brand-red/5 rounded-[3px] px-4 py-2 text-sm font-medium">Social Media Management</span>
+              <span class="chip border border-gray-200 hover:border-brand-red hover:bg-brand-red/5 rounded-[3px] px-4 py-2 text-sm font-medium">Video Production</span>
+              <span class="chip border border-gray-200 hover:border-brand-red hover:bg-brand-red/5 rounded-[3px] px-4 py-2 text-sm font-medium">Performance Ads</span>
+              <span class="chip border border-gray-200 hover:border-brand-red hover:bg-brand-red/5 rounded-[3px] px-4 py-2 text-sm font-medium">Personal Brand</span>
+              <span class="chip border border-gray-200 hover:border-brand-red hover:bg-brand-red/5 rounded-[3px] px-4 py-2 text-sm font-medium">Recruiting</span>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-bold uppercase tracking-wide text-sm mb-3">Dein Budget</label>
+            <div class="flex flex-wrap gap-2" data-group="budget" data-single="true">
+              <span class="chip border border-gray-200 hover:border-brand-red rounded-[3px] px-4 py-2 text-sm font-medium">&lt; 2.000€</span>
+              <span class="chip border border-gray-200 hover:border-brand-red rounded-[3px] px-4 py-2 text-sm font-medium">2.000€ – 5.000€</span>
+              <span class="chip border border-gray-200 hover:border-brand-red rounded-[3px] px-4 py-2 text-sm font-medium">5.000€ – 7.000€</span>
+              <span class="chip border border-gray-200 hover:border-brand-red rounded-[3px] px-4 py-2 text-sm font-medium">Mehr als 7.000€</span>
+            </div>
+          </div>
+
+          <div class="grid sm:grid-cols-2 gap-4">
+            <div>
+              <label for="name" class="block text-sm font-medium mb-2">Name</label>
+              <input id="name" name="name" type="text" required class="w-full bg-white border border-gray-200 rounded-[3px] px-4 py-3 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none" placeholder="Max Mustermann" />
+            </div>
+            <div>
+              <label for="email" class="block text-sm font-medium mb-2">E-Mail</label>
+              <input id="email" name="email" type="email" required class="w-full bg-white border border-gray-200 rounded-[3px] px-4 py-3 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none" placeholder="du@brand.de" />
+            </div>
+          </div>
+
+          <div>
+            <label for="message" class="block text-sm font-medium mb-2">Deine Nachricht</label>
+            <textarea id="message" name="message" rows="4" class="w-full bg-white border border-gray-200 rounded-[3px] px-4 py-3 focus:border-brand-red focus:ring-2 focus:ring-brand-red/20 outline-none resize-none" placeholder="Erzähl uns von deinem Projekt..."></textarea>
+          </div>
+
+          <button type="submit" class="btn-red w-full font-bold uppercase tracking-wide py-4 rounded-full text-base">
+            Erstgespräch sichern →
+          </button>
+          <p id="formStatus" class="text-sm text-center text-black/50"></p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================== FOOTER ============================== -->
+  <footer class="bg-brand-dark text-white pt-20 pb-10 px-6 border-t border-white/10">
+    <div class="max-w-7xl mx-auto">
+      <div class="grid md:grid-cols-4 gap-12 mb-16">
+        <!-- Brand -->
+        <div class="md:col-span-2">
+          <a href="#hero" class="logo-row"><span class="logo-reel text-3xl">REEL</span><span class="logo-haus text-3xl">HAUS</span></a>
+          <p class="mt-4 text-brand-cream/50 max-w-sm leading-relaxed">
+            Premium Content Marketing für Gastronomie, Fashion &amp; Luxus. Content, der verkauft –
+            nicht nur gefällt. <span class="text-brand-gold font-semibold">ROI statt Reichweite.</span>
+          </p>
+          <div class="flex gap-3 mt-6">
+            <a href="#" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-red hover:text-brand-red transition-colors" aria-label="Instagram">IG</a>
+            <a href="#" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-red hover:text-brand-red transition-colors" aria-label="TikTok">TT</a>
+            <a href="mailto:kontakt@reel-haus.de" class="w-11 h-11 rounded-full border border-white/15 flex items-center justify-center hover:border-brand-red hover:text-brand-red transition-colors" aria-label="E-Mail">✉</a>
+          </div>
+        </div>
+
+        <!-- Navigation -->
+        <div>
+          <p class="font-mono uppercase tracking-widest text-xs text-white/40 mb-4">Navigation</p>
+          <ul class="space-y-3 text-white/70">
+            <li><a href="#hero" class="hover:text-brand-red transition-colors">Home</a></li>
+            <li><a href="#agentur" class="hover:text-brand-red transition-colors">Agentur</a></li>
+            <li><a href="#leistungen" class="hover:text-brand-red transition-colors">Leistungen</a></li>
+            <li><a href="#arbeiten" class="hover:text-brand-red transition-colors">Arbeiten</a></li>
+            <li><a href="#core-branding" class="hover:text-brand-red transition-colors">Methode</a></li>
+            <li><a href="#kontakt" class="hover:text-brand-red transition-colors">Kontakt</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal + Contact -->
+        <div>
+          <p class="font-mono uppercase tracking-widest text-xs text-white/40 mb-4">Kontakt &amp; Rechtliches</p>
+          <ul class="space-y-3 text-white/70">
+            <li><a href="mailto:kontakt@reel-haus.de" class="hover:text-brand-red transition-colors">kontakt@reel-haus.de</a></li>
+            <li>Deutschland · München</li>
+            <li><a href="#" class="hover:text-brand-red transition-colors">Impressum</a></li>
+            <li><a href="#" class="hover:text-brand-red transition-colors">Datenschutz</a></li>
+            <li><a href="#" class="hover:text-brand-red transition-colors">AGB</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-8 flex flex-col md:flex-row items-center justify-between gap-4 text-sm text-white/40">
+        <p>© <span id="year"></span> REELHAUS. Alle Rechte vorbehalten.</p>
+        <p class="font-mono text-brand-gold/60">CONTENT, DER VERKAUFT.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scroll to top -->
+  <button id="toTop" class="fixed bottom-6 right-6 z-50 w-12 h-12 rounded-full btn-red font-bold text-xl flex items-center justify-center shadow-lg" aria-label="Nach oben scrollen">↑</button>
+
+  <script src="assets/main.js"></script>
+</body>
+</html>

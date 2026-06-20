@@ -1,0 +1,10 @@
+# lokales 37-MB-Backup des Originalvideos – nicht veröffentlichen
+_originals/
+
+# lokale Claude-Code-Konfiguration
+.claude/
+
+# OS / Editor
+.DS_Store
+Thumbs.db
+*.log

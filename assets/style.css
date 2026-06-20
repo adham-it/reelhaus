@@ -1,0 +1,371 @@
+/* ============================================================
+   REELHAUS – Premium Content Marketing
+   Brand tokens, outline text, marquee + scroll-reveal animations
+   Palette: black #050505 · red #E03A1E · gold #C9A84C · cream #F2EDE4
+   Type: Unbounded (display) · DM Mono (mono)
+   ============================================================ */
+
+:root {
+  --brand-dark: #050505;
+  --brand-red: #E03A1E;
+  --brand-red-deep: #c4310f;
+  --brand-gold: #C9A84C;
+  --brand-cream: #F2EDE4;
+  --brand-gray: #131313;
+  --brand-line: rgba(242, 237, 228, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--brand-dark);
+  color: var(--brand-cream);
+  /* "clip" prevents horizontal scroll WITHOUT creating a scroll container,
+     so position: sticky keeps working (needed for the pinned phone effect). */
+  overflow-x: clip;
+  font-family: "Inter", ui-sans-serif, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--brand-red);
+  color: var(--brand-cream);
+}
+
+/* Display font for headings */
+.font-display {
+  font-family: "Unbounded", "Inter", sans-serif;
+  letter-spacing: -0.02em;
+}
+
+/* Eyebrow label (gold, wide tracking) — REELHAUS signature */
+.eyebrow {
+  font-family: "DM Mono", ui-monospace, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--brand-gold);
+}
+
+/* ---------- Custom Scrollbar ---------- */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #050505; }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--brand-red); }
+
+/* ---------- Outline text effects ---------- */
+.text-outline {
+  -webkit-text-stroke: 2px rgba(242, 237, 228, 0.8);
+  color: transparent;
+}
+.text-outline-red {
+  -webkit-text-stroke: 2px var(--brand-red);
+  color: transparent;
+}
+.text-outline-gold {
+  -webkit-text-stroke: 1.5px var(--brand-gold);
+  color: transparent;
+}
+.text-outline-black {
+  -webkit-text-stroke: 2px rgba(0, 0, 0, 0.85);
+  color: transparent;
+}
+@media (max-width: 768px) {
+  .text-outline,
+  .text-outline-red,
+  .text-outline-gold,
+  .text-outline-black { -webkit-text-stroke-width: 1.5px; }
+}
+
+/* ---------- Logo wordmark ---------- */
+.logo-row { display: flex; align-items: baseline; line-height: 1; }
+.logo-reel { font-family: "Unbounded", sans-serif; font-weight: 900; color: var(--brand-cream); letter-spacing: -1.5px; }
+.logo-haus { font-family: "Unbounded", sans-serif; font-weight: 900; color: var(--brand-red); letter-spacing: -1.5px; }
+
+/* ---------- Animated grain / fog background ---------- */
+.fog {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.55;
+  background:
+    radial-gradient(60vw 60vw at 15% 10%, rgba(224, 58, 30, 0.16), transparent 60%),
+    radial-gradient(50vw 50vw at 85% 80%, rgba(201, 168, 76, 0.08), transparent 60%);
+  animation: fogShift 18s ease-in-out infinite alternate;
+}
+@keyframes fogShift {
+  0%   { transform: translate3d(0, 0, 0) scale(1); }
+  100% { transform: translate3d(-4%, 3%, 0) scale(1.15); }
+}
+
+/* ---------- Marquee ---------- */
+.marquee {
+  display: flex;
+  width: max-content;
+  white-space: nowrap;
+  will-change: transform;
+}
+.marquee--left  { animation: marqueeLeft  32s linear infinite; }
+.marquee--right { animation: marqueeRight 32s linear infinite; }
+.marquee:hover { animation-play-state: paused; }
+@keyframes marqueeLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes marqueeRight {
+  from { transform: translateX(-50%); }
+  to   { transform: translateX(0); }
+}
+
+/* ---------- Scroll reveal ---------- */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal[data-delay="1"] { transition-delay: 0.08s; }
+.reveal[data-delay="2"] { transition-delay: 0.16s; }
+.reveal[data-delay="3"] { transition-delay: 0.24s; }
+.reveal[data-delay="4"] { transition-delay: 0.32s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .marquee--left, .marquee--right, .fog { animation: none; }
+}
+
+/* ---------- Hero blob / glow ---------- */
+.hero-glow {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  max-width: 700px;
+  max-height: 700px;
+  border-radius: 9999px;
+  background: radial-gradient(circle, rgba(224, 58, 30, 0.3), transparent 65%);
+  filter: blur(40px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ---------- Service card hover ---------- */
+.service-card {
+  transition: background-color 0.4s ease, border-color 0.4s ease, transform 0.4s ease;
+}
+.service-card:hover {
+  transform: translateY(-6px);
+}
+.service-card .arrow {
+  transition: transform 0.4s ease, color 0.3s ease;
+}
+.service-card:hover .arrow {
+  transform: translate(6px, -6px) rotate(0deg);
+  color: var(--brand-red);
+}
+
+/* ---------- Work / video cards ---------- */
+.work-card {
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.5s ease;
+}
+.work-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.6);
+}
+
+/* ---------- Selectable chips (form) ---------- */
+.chip {
+  cursor: pointer;
+  transition: all 0.25s ease;
+  user-select: none;
+}
+.chip.is-active,
+.chip.is-active:hover {
+  background: var(--brand-red);
+  color: var(--brand-cream);
+  border-color: var(--brand-red);
+}
+
+/* ---------- Buttons ---------- */
+.btn-red {
+  background: var(--brand-red);
+  color: var(--brand-cream);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+}
+.btn-red:hover {
+  transform: translateY(-2px);
+  background: var(--brand-red-deep);
+  box-shadow: 0 12px 30px -8px rgba(224, 58, 30, 0.55);
+}
+/* Gold outline button (secondary / premium) */
+.btn-gold {
+  background: transparent;
+  color: var(--brand-gold);
+  border: 1px solid rgba(201, 168, 76, 0.5);
+  transition: all 0.3s ease;
+}
+.btn-gold:hover {
+  background: rgba(201, 168, 76, 0.08);
+  border-color: var(--brand-gold);
+}
+
+/* ---------- Nav link underline ---------- */
+.nav-link {
+  position: relative;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  height: 2px;
+  width: 0;
+  background: var(--brand-red);
+  transition: width 0.3s ease;
+}
+.nav-link:hover::after { width: 100%; }
+
+/* ---------- Mobile menu ---------- */
+.mobile-menu {
+  transition: transform 0.45s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+  transform: translateY(-12px);
+  opacity: 0;
+  pointer-events: none;
+}
+.mobile-menu.is-open {
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* ---------- Scroll-to-top ---------- */
+#toTop {
+  opacity: 0;
+  transform: translateY(20px);
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#toTop.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+/* ============================================================
+   Arbeiten – pinned phone + native vertical snap-scroll feed
+   (independent from page scroll, TikTok/Insta-style snapping)
+   ============================================================ */
+
+/* The phone screen IS its own scroll container.
+   - overscroll-behavior: contain  -> wheel/touch over the phone scrolls the
+     feed only; it never "leaks" into the page. Scroll the page by pointing
+     anywhere outside the phone. (position-based separation)
+   - scroll-snap-type: mandatory    -> always rest exactly on one reel.
+*/
+#phoneScreen {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch; /* momentum scroll on iOS */
+  scrollbar-width: none;             /* Firefox: hide scrollbar */
+}
+#phoneScreen::-webkit-scrollbar { width: 0; height: 0; display: none; }
+
+/* Each reel = exactly one screen, hard snap, never skip more than one. */
+.work-post {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+.work-video { background: #000; }
+.work-play { transition: opacity 0.35s ease; }
+
+/* Pin: phone stays in view while the section is on screen.
+   Desktop only — on mobile the phone stays in normal flow so the page
+   never feels "trapped" (you scroll the page in the margins above/below). */
+.work-pin { position: relative; }
+.work-pinned #workTrack { height: auto; }
+@media (min-width: 1024px) {
+  .work-pinned .work-pin {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+  }
+  .work-pinned #workTrack { height: 150vh; }
+}
+
+/* ============================================================
+   Blueprint – vertical progress timeline
+   ============================================================ */
+.bp-dot {
+  position: relative;
+  display: block;
+  width: 18px;
+  height: 18px;
+  z-index: 10;
+}
+.bp-core {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: #050505;
+  border: 2px solid var(--brand-red);
+  box-shadow: 0 0 10px rgba(224, 58, 30, 0.5);
+  transition: background 0.4s ease, transform 0.4s ease, box-shadow 0.4s ease;
+}
+.bp-ping {
+  position: absolute;
+  inset: 0;
+  border-radius: 9999px;
+  background: var(--brand-red);
+  opacity: 0;
+}
+
+/* active step (progress line has reached this dot) */
+.bp-step.is-active .bp-core {
+  background: var(--brand-red);
+  transform: scale(1.2);
+  box-shadow: 0 0 18px rgba(224, 58, 30, 0.9);
+}
+.bp-step.is-active .bp-ping {
+  opacity: 0.55;
+  animation: pulseRing 2s ease-out infinite;
+}
+.bp-step.is-active .bp-card {
+  border-color: rgba(224, 58, 30, 0.5);
+}
+.bp-step.is-active .bp-num {
+  -webkit-text-stroke-color: var(--brand-red);
+}
+.bp-card:hover {
+  border-color: rgba(201, 168, 76, 0.5);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .bp-step.is-active .bp-ping { animation: none; }
+}
+
+/* play pulse ring */
+.pulse-ring {
+  animation: pulseRing 2.4s ease-out infinite;
+}
+@keyframes pulseRing {
+  0%   { transform: scale(0.9); opacity: 0.7; }
+  70%  { transform: scale(1.6); opacity: 0; }
+  100% { opacity: 0; }
+}
